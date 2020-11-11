@@ -18,6 +18,14 @@ const autoprefixer = require('gulp-autoprefixer');
  
 // Подключаем модуль gulp-clean-css
 const cleancss = require('gulp-clean-css');
+// Подключаем gulp-imagemin для работы с изображениями
+const imagemin = require('gulp-imagemin');
+ 
+// Подключаем модуль gulp-newer
+const newer = require('gulp-newer');
+ 
+// Подключаем модуль del
+const del = require('del');
 // Определяем логику работы Browsersync
 function browsersync() {
 	browserSync.init({ // Инициализация Browsersync
@@ -45,6 +53,15 @@ function styles() {
 	.pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
 	.pipe(browserSync.stream()) // Сделаем инъекцию в браузер
 }
+function images() {
+	return src('app/images/src/**/*') // Берём все изображения из папки источника
+	.pipe(newer('app/images/dest/')) // Проверяем, было ли изменено (сжато) изображение ранее
+	.pipe(imagemin()) // Сжимаем и оптимизируем изображеня
+	.pipe(dest('app/images/dest/')) // Выгружаем оптимизированные изображения в папку назначения
+}
+function cleanimg() {
+	return del('app/images/dest/**/*', { force: true }) // Удаляем всё содержимое папки "app/images/dest/"
+}
 function startwatch() {
  
 	// Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
@@ -53,6 +70,8 @@ function startwatch() {
 	watch('app/**/' + preprocessor + '/**/*', styles);
 	// Мониторим файлы HTML на изменения
 	watch('app/**/*.html').on('change', browserSync.reload);
+	// Мониторим папку-источник изображений и выполняем images(), если есть изменения
+	watch('app/images/src/**/*', images);
 }
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
 exports.browsersync = browsersync;
@@ -60,5 +79,9 @@ exports.browsersync = browsersync;
 exports.scripts = scripts;
 // Экспортируем функцию styles() в таск styles
 exports.styles = styles;
+// Экспорт функции images() в таск images
+exports.images = images;
+// Экспортируем функцию cleanimg() как таск cleanimg
+exports.cleanimg = cleanimg;
 // Экспортируем дефолтный таск с нужным набором функций
 exports.default = parallel(styles, scripts, browsersync, startwatch);
