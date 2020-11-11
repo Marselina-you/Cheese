@@ -62,12 +62,12 @@ require_once('appvars.php');
     <div class="container-fluid wrap_view-content">
       <div class="view-content col-lg-10 offset-lg-1">
         <div class="row view-content-title ">
-          <div class="view-content-title__head browncolor text-center styletext ">
+          <div class="view-content-title__head browncolor text-center size24px ">
             <strong>'  .$nal. '</strong>
           </div>';
-     echo'<div class="view-content-title__namecheese browncolor styletext">'  .$name_rus. '
+     echo'<div class="view-content-title__namecheese browncolor size24px">'  .$name_rus. '
           </div>';
-     echo'<div class="view-content-title__namecheese browncolor styletext">('  .$names. ')
+     echo'<div class="view-content-title__namecheese browncolor size24px">('  .$names. ')
           </div>
         </div>';
    echo'<div class="row box1-view-content-ihfo">
@@ -110,7 +110,7 @@ require_once('appvars.php');
           </div>
         </div>
       </div>';
- echo'<div class="col-lg-10 offset-lg-9 pt-lg-4">
+ echo'<div class="col-lg-2 offset-lg-9">
         <button type="button" class="btn btn-success my_href ">
           <a href="auto.php">сохранить</a>
         </button>

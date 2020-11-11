@@ -6,9 +6,57 @@ body
 	    background-color: lightgreen
 $color1: rgba(219, 218, 196, 0.7)
 $color2: rgba(77, 72, 60, 0.7)
+.photoProductImg
+    img
+	    min-width: 100%
+        height: auto
+h3
+    padding-top: 1.25em
+    
+
+.browncolor
+	color: #1f1206
+.greencolor
+	color: #1c7d34
+.size48px
+	font-size: 3em
+.darkbrowncolor
+	color: #351E10
+.bardcolor
+	color:#A52A2A
+.lightbrowncolor
+	color:#8B7355
+.whitecolor
+	color: white
+.fonttextSegoeScript
+	font-family: "Segoe Script"
+.fontTahoma
+	font-family: "Tahoma"
+.fontSans
+	font-family: "Microsoft Sans Serif"
+.size14px
+	font-size: 0.875em
+.size45px
+	font-size: 2.75em
+.size35px
+	font-size: 2.2em
+.size32px
+	font-size: 2em
+.size29px
+	font-size: 1.8em
+.size26px
+	font-size: 1.6em
+.size22px
+	font-size: 1.4em
+.size24px
+	font-size: 1.5em
+.size20px
+	font-size: 1.25em
+.size14px
+	font-size: 0.875em
+
 //enter for admin
-.container-fluid
-	width: 100%
+
 .colorfon
 	padding: 0.625em
 	background-color: #9b9fa0
@@ -104,10 +152,6 @@ td .border_color
 	padding: 2.2em
 .box1-view-content-ihfo
 	padding: 2.2em
-.styletext
-	font-size: 1.5em
-.browncolor
-	color: #1f1206
 .box1-view-content-ihfo-text__value
 	padding: 0.625em 0 0.625em 0
 .view-content-forma
@@ -116,27 +160,65 @@ td .border_color
 	padding: 2.45em 0 0 0
 .view-content-forma-input-wrap
 	padding: 0.625em 0 0 0
-.view-content-forma-input
-	padding: 0.625em 0 0.625em 0
-    width: 110px
-    text-align: center
-    font-family: 'Tahoma'
 .wrap-box1-view-content-ihfo__description
 	background-color: white
     justify-content: center
     padding: 2.45em 0 2.45em 0
-.expand
-	cursor: pointer
-    font-family: Tahoma
-    font-size: 1.25em    
-.padding-15
-	padding: 0.95em 0 0.95em 0
-.cheese-text-none
-	font-family: 'Tahoma'
-    font-size: 1.15em
-    font-weight: normal
-    line-height: 1.2
-    letter-spacing: 1
-.minySize
-	text-align: center
+  
+
+//undertitle
+.row 
+	padding: 0
+.header-box1
+	padding: 0
+
+.title-container
+	@media screen and (max-width: 1200px)
+	    background: url(../images/dest/title_fon.png) no-repeat
+	    height: 769px
+	@media screen and (max-width: 992px)
+	    background: url(../images/dest/title-fon-md.png) no-repeat
+	    height: 450px
+	@media screen and (max-width: 768px)
+	    background: url(../images/dest/title-fon-sm.png) no-repeat
+	    height: 400px
+	background: url(../images/dest/title-fon.jpg) no-repeat
+	height: 850px
+    width: 100%
+    padding: 0
+.header-box1
+	background-color:#dbdac4
+    padding: 0
+
+.header_icon
+	padding: 5px
+	img
+	    opacity: 0.7
+	    &:hover 
+	        opacity: 1
+	        
+     
+.header_icon__enter 
+	position: relative
+.header-box1__enter 
+    position: absolute
+    left: 0
+    bottom: 0
+    right: 0
+    top: 42px
+    opacity: 0.1
+    padding: 55px 0
+    background-color:#dbdac4
+    z-index: 3
+    a 
+        padding: 7px 7px
+        background-color: blue
+        color: white
+        border-radius: 5px
+.header_icon__enter 
+	&:hover .header-box1__enter 
+         opacity: 1
+.header-box1__padding
+	padding-bottom: 15px
+
 
