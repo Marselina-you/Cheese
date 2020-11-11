@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<? echo'huy';
+	<? echo'huyhuy';
 	?>
 	<p>kukukuku</p>
 	<script src="js/app.min.js"></script>
