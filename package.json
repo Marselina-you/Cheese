@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Marselina-you/Cheese#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.13",
     "gulp": "^4.0.2"
   }
 }
