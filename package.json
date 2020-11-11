@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Marselina-you/Cheese/issues"
   },
-  "homepage": "https://github.com/Marselina-you/Cheese#readme"
+  "homepage": "https://github.com/Marselina-you/Cheese#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
