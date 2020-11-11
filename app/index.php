@@ -5,12 +5,16 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/app.min.css">
+	<script src="js/app.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<? echo'huyhuy';
-	?>
-	<p>kukukuku</p>
-	<script src="js/app.min.js"></script>
+	<?
+        require_once('undertitle.html');
+        require_once('title.html');
+        require_once('assortiment.php');
+        require_once('footer.php');
+?>
+	
 	</body>
 </html>
