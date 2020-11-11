@@ -10,11 +10,13 @@ const concat = require('gulp-concat');
 // Подключаем gulp-uglify-es
 const uglify = require('gulp-uglify-es').default;
 // Подключаем модули gulp-sass и gulp-less
+// Подключаем Autoprefixer
+const autoprefixer = require('gulp-autoprefixer');
+// Подключаем модули gulp-sass и gulp-less
 const sass = require('gulp-sass');
 const less = require('gulp-less');
  
-// Подключаем Autoprefixer
-const autoprefixer = require('gulp-autoprefixer');
+
  
 // Подключаем модуль gulp-clean-css
 const cleancss = require('gulp-clean-css');
@@ -71,20 +73,18 @@ function buildcopy() {
 		], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
 	.pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
 }
-function cleandist() {
-	return del('dist/**/*', { force: true }) // Удаляем всё содержимое папки "dist/"
-}
 function startwatch() {
  
 	// Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
 	watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
-    // Мониторим файлы препроцессора на изменения
+	// Мониторим файлы препроцессора на изменения
 	watch('app/**/' + preprocessor + '/**/*', styles);
 	// Мониторим файлы HTML на изменения
 	watch('app/**/*.html').on('change', browserSync.reload);
 	// Мониторим папку-источник изображений и выполняем images(), если есть изменения
 	watch('app/images/src/**/*', images);
 	watch('app/**/*.php').on('change', browserSync.reload);
+ 
 }
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
 exports.browsersync = browsersync;
@@ -97,6 +97,6 @@ exports.images = images;
 // Экспортируем функцию cleanimg() как таск cleanimg
 exports.cleanimg = cleanimg;
 // Создаём новый таск "build", который последовательно выполняет нужные операции
-exports.build = series(cleandist, styles, scripts, images, buildcopy);
+exports.build = series(styles, scripts, images, buildcopy);
 // Экспортируем дефолтный таск с нужным набором функций
 exports.default = parallel(styles, scripts, browsersync, startwatch);
