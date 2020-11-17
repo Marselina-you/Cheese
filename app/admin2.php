@@ -1,7 +1,7 @@
 <?php
 session_start();//Запускаем сессии 
 require_once('appvars.php');
-  $dbc = mysqli_connect('localhost','root','root', 'letkino');
+  $dbc = mysqli_connect('localhost','root','root','letkino');
     if (isset($_POST['submit'])) {
       $id = $_GET['id'];
       $name_rus = $_POST['name_rus'];
