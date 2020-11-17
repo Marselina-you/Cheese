@@ -5,30 +5,46 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/app.min.css">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<div class="container-fluid block-registration-enter d-flex justify-content-center">
-		<div class="block-enter col-lg-5 d-flex flex-column align-items-center">
-			<form method="post" action="" class="block-enter__form col-lg-6 d-flex flex-column">
-					<div class="block-enter__label-input col-lg-12 d-flex align-items-center justify-content-between">
-					    <label for="login" class="block-enter__label">Логин:</label>
-                        <input type="text" class="block-enter__input" name="login" value=""/>
-                    </div>
-                    <div class="block-enter__label-input col-lg-12 d-flex justify-content-between">
-					    <label for="login" class="block-enter__label">Пароль:</label>
-                        <input type="text" class="block-enter__input" name="login" value=""/>
-                    </div>
-                    <div class="block-enter-submit d-flex justify-content-end">
-                    	<input type="submit" class="block-enter__submit" name="submit" value="войти"/>
-                    </div>
-				</form>
-				<div class="block-registration col-lg-6 d-flex justify-content-end">
-				<button>регистрация</button>
-			</div>
-			
-		</div>
+	<div class="container-fluid">
+		<div class="wrap-registration-form col-lg-6">
+		    <form method="post" class="registration-form col-lg-12" action="">
+		    	<div class="registration-form-block-input d-flex col-lg-6 justify-content-between align-items-center">
+		    		<div class="registration-form-block-input__label size29px fontTahoma darkbrowncolor">
+		    			<label for="user_name">Имя:</label></div>
+		    		<div class="registration-form-block-input__input">
+		    			<input type="text" name="user_name"></div>
+		    	</div>
+		    	<div class="registration-form-block-input d-flex col-lg-8">
+		    		<div class="registration-form-block-input__label">
+		    			<label for="user_phone">Телефон:</label></div>
+		    		<div class="registration-form-block-input__input">
+		    			<input type="text" name="user_phone"></div>
+		    	</div>
+		    	<div class="registration-form-block-input d-flex col-lg-8">
+		    		<div class="registration-form-block-input__label">
+		    			<label for="user_login">Логин:</label></div>
+		    		<div class="registration-form-block-input__input">
+		    			<input type="text" name="user_login"></div>
+		    	</div>
+		    	<div class="registration-form-block-input d-flex col-lg-8">
+		    		<div class="registration-form-block-input__label">
+		    			<label for="user_pass">Пароль:</label></div>
+		    		<div class="registration-form-block-input__input">
+		    			<input type="text" name="user_pass"></div>
+		    	</div>
+		    	<div class="registration-form-block-input d-flex">
+		    		<div class="registration-form-block-input__label">
+		    			<label for="user_pass2">Повторите пароль:</label></div>
+		    		<div class="registration-form-block-input__input">
+		    			<input type="text" name="user_pass2"></div>
+		    	</div>
+
+		    </form>
 	</div>
-	<script src="js/app.min.js"></script>
-	</body>
+	</div>
+</body>
 </html>
