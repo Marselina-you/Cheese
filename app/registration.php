@@ -28,6 +28,12 @@ echo '<div class="container-fluid"><div class="wrap-registration-form col-lg-12"
 		    		<div class="registration-form-block-input__input col-lg-6">
 		    			<input type="text" class="col-lg-12" id="phone" name="phone"></div>
 		    	</div>
+	<div class="registration-form-block-input d-flex col-lg-12 justify-content-between align-items-center">
+		    		<div class="registration-form-block-input__label size20px fontTahoma darkbrowncolor">
+		    			<label for="login">Логин:</label></div>
+		    		<div class="registration-form-block-input__input col-lg-6">
+		    			<input type="text" class="col-lg-12" name="login" placeholder="используйте латинские буквы"></div>
+		    	</div>
       <input type="submit" value="Сохранить" name="submit" /></form>
   </div></div></body>';
 
@@ -38,18 +44,28 @@ echo '<div class="container-fluid"><div class="wrap-registration-form col-lg-12"
     if (isset($_POST['submit'])) {
       $name= $_POST['name'];
       $phone= $_POST['phone'];
+      $login = mysqli_real_escape_string($dbc, trim($_POST['login'])); 
       
       
-          
- $query = "INSERT INTO mytable (name, phone) VALUES ('$name', ' $phone')";
+ if (!empty($login)) {  
+ $query = "SELECT * FROM mytable WHERE login = '$login'";
+ $data = mysqli_query($dbc, $query); 
+  if (mysqli_num_rows($data) == 0) {      
+ $query = "INSERT INTO mytable (name, phone, login) VALUES ('$name', ' $phone', '$login')";
           
            mysqli_query($dbc, $query);
            echo '<h2>Ваша новая учетная запись успешно создана. Теперь вы можете <a href="login.php">войти</a>.</h2>';
         mysqli_close($dbc);
         exit();
         }else{
-  echo 'Не все данные внесены<br/>';
+  echo '<p class="error">Для этого имени пользователя уже существует учетная запись. Пожалуйста, используйте другой адрес.</p>';
+        $login = "";
 }
+} else {
+      echo '<p class="error">Вы должны ввести все регистрационные данные, включая нужный пароль дважды.</p>';
+    } }
+
+  mysqli_close($dbc);
           ?>	
 
 
