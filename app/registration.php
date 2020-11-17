@@ -34,6 +34,10 @@ echo '<div class="container-fluid"><div class="wrap-registration-form col-lg-12"
 		    		<div class="registration-form-block-input__input col-lg-6">
 		    			<input type="text" class="col-lg-12" name="login" placeholder="используйте латинские буквы"></div>
 		    	</div>
+		    	<label for="password1" class="registr">Пароль:</label>
+      <div class="wrapInputText2"><input type="password" id="password1" class="inputtext" name="password1" /></div>
+      <label for="password2" class="registr">Повторите пароль:</label>
+     <div class="wrapInputText2"> <input type="password" id="password2" class="inputtext" name="password2" /></div>
       <input type="submit" value="Сохранить" name="submit" /></form>
   </div></div></body>';
 
@@ -45,25 +49,28 @@ echo '<div class="container-fluid"><div class="wrap-registration-form col-lg-12"
       $name= $_POST['name'];
       $phone= $_POST['phone'];
       $login = mysqli_real_escape_string($dbc, trim($_POST['login'])); 
+      $password1 = mysqli_real_escape_string($dbc, trim($_POST['password1']));
+      $password2 = mysqli_real_escape_string($dbc, trim($_POST['password2']));
       
-      
- if (!empty($login)) {  
+ if (!empty($login)&& !empty($password1) && !empty($password2) && ($password1 == $password2)) {  
  $query = "SELECT * FROM mytable WHERE login = '$login'";
  $data = mysqli_query($dbc, $query); 
   if (mysqli_num_rows($data) == 0) {      
- $query = "INSERT INTO mytable (name, phone, login) VALUES ('$name', ' $phone', '$login')";
+ $query = "INSERT INTO mytable (name, phone, login, password) VALUES ('$name', ' $phone', '$login', SHA('$password1'))";
           
            mysqli_query($dbc, $query);
            echo '<h2>Ваша новая учетная запись успешно создана. Теперь вы можете <a href="login.php">войти</a>.</h2>';
         mysqli_close($dbc);
         exit();
-        }else{
+        }
+        else{
   echo '<p class="error">Для этого имени пользователя уже существует учетная запись. Пожалуйста, используйте другой адрес.</p>';
         $login = "";
-}
+    }
 } else {
       echo '<p class="error">Вы должны ввести все регистрационные данные, включая нужный пароль дважды.</p>';
-    } }
+    } 
+}
 
   mysqli_close($dbc);
           ?>	
