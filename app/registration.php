@@ -8,16 +8,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
- <?php  
-   
-$son = new mysqli('localhost','root','root', 'letkino');
-// Возьмите данные профиля из базы данных
- $select = $son->query("SELECT  name FROM mytable WHERE name IS NOT NULL ORDER BY name  LIMIT 180");
-    while($info = $select->fetch_array()){
-      echo"<div class=''>".$info['name']."</div>"; 
-      echo"<div class=''>".$info['phone']."</div>";
-}
-echo '<div class="container-fluid"><div class="wrap-registration-form col-lg-12"><form enctype="multipart/form-data" method="post" class="registration-form col-lg-6 offset-lg-3" action="">
+	<?php 
+	require_once('undertitle.html'); 
+    ?>
+ <div class="container-fluid"><div class="wrap-registration-form col-lg-12"><form enctype="multipart/form-data" method="post" class="registration-form col-lg-6 offset-lg-3" action="">
 	
 	  <div class="registration-form-block-input d-flex col-lg-12 justify-content-between align-items-center"><div class="registration-form-block-input__label size20px fontTahoma darkbrowncolor">
 		    			<label for="user_name">Имя:</label></div>
@@ -34,15 +28,17 @@ echo '<div class="container-fluid"><div class="wrap-registration-form col-lg-12"
 		    		<div class="registration-form-block-input__input col-lg-6">
 		    			<input type="text" class="col-lg-12" name="login" placeholder="используйте латинские буквы"></div>
 		    	</div>
-		    	<label for="password1" class="registr">Пароль:</label>
-      <div class="wrapInputText2"><input type="password" id="password1" class="inputtext" name="password1" /></div>
-      <label for="password2" class="registr">Повторите пароль:</label>
-     <div class="wrapInputText2"> <input type="password" id="password2" class="inputtext" name="password2" /></div>
+		    	<div class="registration-form-block-input d-flex col-lg-12 justify-content-between align-items-center">
+		    	<div class="registration-form-block-input__label size20px fontTahoma darkbrowncolor"><label for="password1" class="registr">Пароль:</label></div>
+      <div class="registration-form-block-input__input col-lg-6"><input type="password"  class="col-lg-12" name="password1" /></div></div>
+      <div class="registration-form-block-input d-flex col-lg-12 justify-content-between align-items-center">
+      <div class="registration-form-block-input__label size20px fontTahoma darkbrowncolor"><label for="password2" class="registr">Повторите пароль:</label></div>
+     <div class="registration-form-block-input__input col-lg-6"> <input type="password" class="col-lg-12" name="password2" /></div></div>
       <input type="submit" value="Сохранить" name="submit" /></form>
-  </div></div></body>';
+  </div></div></body>
 
 
-
+<<?php  
 
   $dbc = mysqli_connect('localhost','root','root','letkino');
     if (isset($_POST['submit'])) {
@@ -59,7 +55,7 @@ echo '<div class="container-fluid"><div class="wrap-registration-form col-lg-12"
  $query = "INSERT INTO mytable (name, phone, login, password) VALUES ('$name', ' $phone', '$login', SHA('$password1'))";
           
            mysqli_query($dbc, $query);
-           echo '<h2>Ваша новая учетная запись успешно создана. Теперь вы можете <a href="login.php">войти</a>.</h2>';
+           echo '<h2>Ваша новая учетная запись успешно создана. Теперь вы можете <a href="enter.php">войти</a>.</h2>';
         mysqli_close($dbc);
         exit();
         }

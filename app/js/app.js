@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('.header-box1__href').click(function(){
+	$('header_icon__enter').click(function(){
     var url = $(this).attr('href');
     $('.registration').load(url + ' .block-registration-enter');
     return false;

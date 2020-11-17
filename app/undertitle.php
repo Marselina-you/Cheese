@@ -23,15 +23,16 @@
 			<div class="header-box1_icons col-xl-5 offset-xl-2 col-lg-6 offset-lg-2  
 			 col-md-6 col-sm-6 col-xs-4 d-flex align-items-center justify-content-between">
 				<div class="header_icon__enter d-flex align-items-center justify-content-center col-xl-4 col-lg-6">
-				<div class="header_icon"><a href=""><img src="images/dest/g8lack.png"  alt=""/></a></div>
-				<div class="greencolor header_icon_enter"><a href="" class="greencolor">личный кабинет</a></div>
-			    <div class="header-box1__enter d-flex align-items-center flex-column justify-content-center">
+				<div class="header_icon"><a href="enter.php"><img src="images/dest/g8lack.png"  alt=""/></a></div>
+				<div class="greencolor"><a href="enter.php" class="greencolor">личный кабинет
+				</a></div>
+			   <div class="header-box1__enter d-flex align-items-center flex-column justify-content-center">
 			    	<div class="header-box1__padding">Войдите, чтобы совершать</br>покупки</div><a href="enter.php" class="header-box1__href size14px">Войти или зарегистрироваться</a></div>
 			    </div>
 				
 				<div class="d-flex align-items-center justify-content-center col-xl-4">
 				<div class="header_icon"><a href=""><img src="images/dest/basket.png"  alt=""/></a></div>
-				<div class="greencolor"><a href="" class="greencolor">корзина</a></div></div>
+				<div class="greencolor"><a href="basket.html" class="greencolor">корзина</a></div></div>
 				<div class="d-flex align-items-center justify-content-end col-xl-4">
 				<a href=""><div class="header_icon"><img src="images/dest/face.png"   alt=""/></div></a>
 				<a href=""><div class="header_icon"><img src="images/dest/vk.png"   alt=""/></div></a>
