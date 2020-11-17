@@ -14,4 +14,9 @@ $('.title_menu_item__onas').click(function(){
 $('.icon-close').click(function(){
 	$(".wrap-for").hide();
 });
+
+
+
+
+
 })
