@@ -1,11 +1,14 @@
 $(document).ready(function() {
-	$('header_icon__enter').click(function(){
+	$('.header-box1__href').click(function(){
     var url = $(this).attr('href');
     $('.registration').load(url + ' .block-registration-enter');
     return false;
+
     });
     
 
+
+$(".edit").hide();
 
 $(".wrap-for").hide();
 $('.title_menu_item__onas').click(function(){

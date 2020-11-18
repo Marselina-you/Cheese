@@ -2,7 +2,7 @@
   
   session_start();
   $error_msg = "";
-  if (!isset($_SESSION['id'])) {
+  if (!isset($_SESSION['user_id'])) {
   if (isset($_POST['submit'])) {
     // The username/password weren't entered so send the authentication headers
    
@@ -15,15 +15,15 @@
 
   // Look up the username and password in the database
    if (!empty($user_login) && !empty($user_password)) {
-  $query = "SELECT id, login FROM mytable WHERE login = '$user_login' AND password = SHA('$user_password')";
+  $query = "SELECT user_id, login FROM mytable WHERE login = '$user_login' AND password = SHA('$user_password')";
   $data = mysqli_query($dbc, $query);
 
   if (mysqli_num_rows($data) == 1) {
     // The log-in is OK so set the user ID and username variables
     $row = mysqli_fetch_array($data);
-        $_SESSION['id'] = $row['id'];
+        $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['login'] = $row['login'];
-        setcookie('id', $row['id'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
+        setcookie('user_id', $row['user_id'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
         setcookie('login', $row['login'], time() + (60 * 60 * 24 * 30));
         $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . 'index.php';
           header('Location: ' . $home_url);
@@ -48,7 +48,7 @@
   require_once('undertitle.php');?>
 <?php
   // если куки не содержит данных,выводится сообщение об ошибке и форма входа в приложение
-  if (empty($_SESSION['id'])) {
+  if (empty($_SESSION['user_id'])) {
     echo '<p class="error">' . $error_msg . '</p>';
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -62,7 +62,7 @@
 <body>
     <div class="container-fluid block-registration-enter d-flex justify-content-center">
         <div class="block-enter col-lg-5 d-flex flex-column">
-        	<form method="post" class="block-enter__form col-lg-6 d-flex flex-column" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        	<form method="post" class="block-enter__form col-lg-6 d-flex flex-column backgroud1" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <div class="block-enter__label-input col-lg-12 d-flex align-items-center justify-content-between">
                     <label for="login" class="block-enter__label">Логин:</label>
                     <input type="text" name="login" class="block-enter__input" value="<?php if (!empty($user_login)) echo $user_login; ?>" />
@@ -75,7 +75,7 @@
                     <input type="submit" class="block-enter__submit" name="submit" value="войти"/>
                 </div>
             </form>
-            <div class="block-registration col-lg-6 d-flex justify-content-end">
+            <div class="block-registration col-lg-6 d-flex justify-content-end backgroud1">
 				<button><a href="registration.php">регистрация</a></button>
 			</div>
 </div>
@@ -85,12 +85,29 @@
 
   else {
     // Confirm the successful log-in
-    echo('<div class="block-registration-enter">');
-    echo'<a href="logout.php"> ' . $_SESSION['login'] . '(Выйти)</a></div>';
+   $dbc = mysqli_connect('localhost','root','root', 'letkino');
+  $query = "SELECT name FROM mytable WHERE user_id = '" . $_SESSION['user_id'] . "'";
+  $data = mysqli_query($dbc, $query);
+   $row = mysqli_fetch_array($data);
+    if ($row != NULL) {
+      $login = $row['login'];
+      $name = $row['name'];
+    }
+     mysqli_close($dbc); 
+    
+    echo'<div class="block-registration-enter backgroud2"><div class=""><a href="logout.php" class="darkbrowncolor"> ' . $name . '(Выйти)</a></div>
+    
+    <div class="editprofile"><a href="editprofile.html">редактировать</a></div>
+    <div class="edit">kuku</div>
+  
+
+  ';
+  
   }
 ?>
+<script src="js/editprofile.js"></script>
 <script src="js/app.min.js"></script>
+
 </body>
 </html>
-
 	

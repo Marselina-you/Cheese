@@ -9,7 +9,7 @@
 	<title>header1</title>
 </head>
 <body>
-	 <div class="container-fluid footer-container">
+	 <div class="container-fluid footer-container backgroud5">
 	     	<div class="footer-box1">
 				<div class="wrap-footer-box-1">          
 				    <div class="footer-box1__caption greencolor justify-content-center"><h2 class="text-center">Контакты</h2></div>
@@ -40,9 +40,8 @@
                 <div class="submit-wrap d-flex justify-content-center">
                     <input type="submit" value="отправить" name ="submit" class="btn btn-dark"/>
                 </div>
-                </form>
-            </div>
-            <div class="footer-box3 align-items-center d-flex justify-content-center col-lg-12">
+                </form></div>
+                <div class="footer-box3 align-items-center d-flex justify-content-center col-lg-12">
 		    	<div class="footer-box3_name col-lg-2 offset-lg-1 col-md-6 col-sm-6 d-flex justify-content-center"><div class="footer-box3_name">Alferova@studio2020</div></div>
 		    	<div class="footer-box3-social d-flex col-lg-2 offset-lg-6 col-md-6 col-sm-6 justify-content-center">
 		    		<div class="footer-box3-social__icon"><img src="images/dest/face.png" alt=""></div>

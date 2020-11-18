@@ -9,9 +9,9 @@
 </head>
 <body>
 	<?php 
-	require_once('undertitle.html'); 
+	require_once('undertitle.php'); 
     ?>
- <div class="container-fluid"><div class="wrap-registration-form col-lg-12"><form enctype="multipart/form-data" method="post" class="registration-form col-lg-6 offset-lg-3" action="">
+ <div class="container-fluid"><div class="wrap-registration-form col-lg-12"><form enctype="multipart/form-data" method="post" class="registration-form col-lg-6 offset-lg-3 backgroud1" action="">
 	
 	  <div class="registration-form-block-input d-flex col-lg-12 justify-content-between align-items-center"><div class="registration-form-block-input__label size20px fontTahoma darkbrowncolor">
 		    			<label for="user_name">Имя:</label></div>
