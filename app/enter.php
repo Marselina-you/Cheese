@@ -95,10 +95,12 @@
     }
      mysqli_close($dbc); 
     
-    echo'<div class="block-registration-enter backgroud2"><div class=""><a href="logout.php" class="darkbrowncolor"> ' . $name . '(Выйти)</a></div>
+    echo'<div class="container-fluid block-registration-enter"><div class="block-enter col-lg-12">
+      <div class="col-lg-6 block-update-profile__item fontTahoma size20px darkbrowncolor">Мы рады видеть тебя, ' . $name . '!</div>
+      <div class="col-lg-6 block-update-profile__item fontTahoma size20px darkbrowncolor"><a href="logout.php">(Выйти)</a></div>
     
-    <div class="editprofile"><a href="editprofile.html">редактировать</a></div>
-    <div class="edit">kuku</div>
+    <div class="col-lg-6 block-update-profile__item fontTahoma size20px darkbrowncolor"><a href="editprofile.php">редактировать</a></div></div></div>
+    
   
 
   ';

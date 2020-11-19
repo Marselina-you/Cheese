@@ -15,7 +15,7 @@
         require_once('assortiment.php');
         require_once('footer.php');
 ?>
-	<script src="js/editprofile.js"></script>
+	
 
 	</body>
 </html>

@@ -8,7 +8,7 @@ $(document).ready(function() {
     
 
 
-$(".edit").hide();
+
 
 $(".wrap-for").hide();
 $('.title_menu_item__onas').click(function(){

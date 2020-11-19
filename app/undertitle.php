@@ -73,7 +73,7 @@ if (isset($_SESSION['user_id'])) {
 	</div>
 	</div>
 <script src="js/app.min.js"></script>
-<script src="js/editprofile.js"></script>
+
 
 </body>
 </html>
