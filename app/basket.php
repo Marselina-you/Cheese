@@ -25,9 +25,6 @@ if (!isset($_SESSION['user_id'])) {
 	    </div>
     </div>
     <?php 
-
-
-
 }
 $dbc = mysqli_connect('localhost','root','root', 'letkino');
 	$query = "SELECT name FROM mytable WHERE user_id = '" . $_SESSION['user_id'] . "'";
@@ -46,14 +43,8 @@ $dbc = mysqli_connect('localhost','root','root', 'letkino');
 	    	 <div class="col-lg-6 block-update-profile____item darkbrowncolor fontTahoma size20px"><a href="logout.php">Выйти</a></div>
 	    	</div>
 	    </div>';
-
-    require_once('footer.php'); 
-    
-  
-
-   
-  
- ?>
+require_once('footer.php'); 
+?>
 <script src="js/app.min.js"></script>
 </body>
 </html>
