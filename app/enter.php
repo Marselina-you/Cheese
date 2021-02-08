@@ -1,5 +1,4 @@
 <?php
-  
   session_start();
   $error_msg = "";
   if (!isset($_SESSION['user_id'])) {
@@ -60,9 +59,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div class="container-fluid block-registration-enter d-flex justify-content-center">
-        <div class="block-enter col-lg-5 d-flex flex-column">
-        	<form method="post" class="block-enter__form col-lg-6 d-flex flex-column backgroud1" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <div class="container-fluid block-registration-enter col-lg-12 d-flex flex-column">
+        
+        	<form method="post" class="block-enter__form  d-flex flex-column backgroud1" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <div class="block-enter__label-input col-lg-12 d-flex align-items-center justify-content-between">
                     <label for="login" class="block-enter__label">Логин:</label>
                     <input type="text" name="login" class="block-enter__input" value="<?php if (!empty($user_login)) echo $user_login; ?>" />
@@ -75,11 +74,11 @@
                     <input type="submit" class="block-enter__submit" name="submit" value="войти"/>
                 </div>
             </form>
-            <div class="block-registration col-lg-6 d-flex justify-content-end backgroud1">
+            <div class="block-registration col-lg-12 d-flex justify-content-end backgroud1">
 				<button><a href="registration.php">регистрация</a></button>
 			</div>
 </div>
-</div>
+
 <?php
 }
 

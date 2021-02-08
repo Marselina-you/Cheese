@@ -218,13 +218,15 @@ td .border_color
 	    cursor: pointer
 .header-box2_titlecheese
 	@media screen and (max-width: 1200px)
-	    padding-top: 120px
+	    padding-top: 240px
+	    margin-left: 0
 	@media screen and (max-width: 992px)
 	    padding-top: 40px
 	@media screen and (max-width: 768px)
 	    padding-top: 10px
 	    background-color: $color1
-	padding-top: 80px
+	padding-top: 200px
+	
 .header-box2_title 
 	letter-spacing: 15px
 //assortiment
@@ -233,7 +235,7 @@ td .border_color
 	background: url(../images/dest/cheese.png) no-repeat
 .photoProduct
 	padding-top: 66px
-.quickView
+.quickView-div
 	margin-top: -63px
 	padding: 0.95em
 	opacity: 0
@@ -245,7 +247,7 @@ td .border_color
 	    display: block
 	    transition: .3s linear
 .photoProduct
-	&:hover .quickView
+	&:hover .quickView-div
 	    opacity: 1
         transition: 1s
 //footer 
@@ -280,7 +282,7 @@ td .border_color
 .wrap-for
     margin-right: -1000
     overflow: hidden
-    margin-top: -211px
+    margin-top: -311px
 .icon-close
 	position: relative
 	top: 50px
@@ -367,10 +369,16 @@ td .border_color
 	background: url(../images/dest/slide5.png) no-repeat
 .slide-content
 	height: 604px
+
 .content__text
 	background-color: $color2
 	margin-top: 120px
 //enter
+button.close
+	background-color: #bfe2e6
+
+.modal-content
+	background-color: $color2
 .block-registration-enter
 	padding: 0
 	width: 100%
@@ -379,7 +387,7 @@ td .border_color
 .block-enter
 	padding: 15px
 .block-registration
-	padding: 15px 25px 15px 0
+	padding: 10px
 .block-enter__label-input
 	padding: 10px
 .block-enter-submit
@@ -406,8 +414,13 @@ td .border_color
 	border-radius: 5px
 
 //viewCheese
-.view-content-title
-	padding: 15px
+.view-content__quick
+	padding: 0
+	background-color: rgba(219, 218, 196, 0.9)
+.view-content-title__quick
+	padding: 0
+	margin: 0
+	background-color: white
 .box1-view-content-ihfo__foto-img 
 	padding: 20px
 	img
@@ -431,8 +444,9 @@ td .border_color
 	background: url(../images/dest/cheese-2.jpg) no-repeat
     height: 1524px
 //preview before adding a new cheese
-.wrap_view-content
-	
+
+
+    
 .view-content
 	background-color: $color1
 .view-content-title__head
@@ -467,3 +481,13 @@ td .border_color
 	padding: 100px
 .block-enter
 	padding: 20px 0 20px 100px
+//modal
+button.close
+	background-color: #bfe2e6    
+
+
+    
+
+
+
+

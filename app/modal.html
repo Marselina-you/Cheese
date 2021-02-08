@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  
+  <link rel="stylesheet" href="css/app.min.css">
+  <script src="js/app.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>header1</title>
+</head>
+
+<body>
+  <div class="photoProduct col-lg-3 col-md-6 col-sm-6 col-xs-12 ">
+        <div class="photoProductImg"><img src="../images/dest/lamber.png"  alt="" /></div>
+        <div class="quickView col-lg-12 text-center"><button id="myBtn" class="">Быстрый просмотр</button></div>
+
+
+<div id="myModal" class="modal">
+
+ 
+  <div class="view-content col-lg-8 offset-lg-2 col-sm-12 col-xs-12">
+    <div class="view-content-title col-lg-12 d-flex justify-content-between">
+      <div class="d-flex">
+      <div class="view-content-title__head text-center size26px darkbrowncolor">
+              <strong>В наличии</strong>
+            </div>
+      <div class="view-content-title__namecheese size26px darkbrowncolor">Голландский
+            </div>
+      <div class="view-content-title__namecheese size26px darkbrowncolor">(cheese)
+            </div>
+      <div class="view-content-title__namecheese size26px darkbrowncolor">&nbsp;&nbsp;-&nbsp;&nbsp;Голландия
+            </div></div>
+      <span class="close">&times;</span>
+    </div>
+    <div class="modal-body">
+        <div class="row box1-view-content-ihfo d-flex col-lg-12">
+            <div class="box1-view-content-ihfo__foto col-lg-12 d-flex">
+              <div class="box1-view-content-ihfo__foto-img col-lg-5">
+                <img src="../images/dest/lamber.png"  alt="Сыр фото" />
+              </div>
+      <div class="box1-view-content-ihfo-text col-lg-5 offset-lg-2">
+                <div class="box1-view-content-ihfo-text__namecheese">
+                  <div class="h5 browncolor">Голландский</div>
+                  <div>(cheese)</div>
+                </div>
+          <div class="box1-view-content-ihfo-text__value cheese-text">500 00 p</div>
+          <div class="cheese-text">Цена указана за 200 грамм</div>
+         
+         
+         <form action="buyCheese.php" class="view-content-forma" method="post">
+            
+              <div class="cheese-text">Количество</div>
+               <div class="view-content-forma-input-wrap d-flex">
+              <input type="text" placeholder="1" name="quantity" class="view-content-forma-input no_border "/>
+             </div>
+            <div class="view-content-forma-submit-wrap d-flex">
+              <input type="submit"  name = "" class="btn btn-success view-content-forma-submit" value="Добавить в корзину"/>
+            </div>
+            <div class="view-content-forma__detail"><a href="viewCheese.php" class="text-center browncolor size26px fontTahoma">Подробнее</a></div>
+          </form>
+          </div>
+            </div>
+          
+      </div>
+        
+         
+    </div>
+    
+      
+    
+  </div>
+
+</div>
+<script src="js/modal.js"></script>
+</body>
+</html>

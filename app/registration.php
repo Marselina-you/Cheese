@@ -38,7 +38,7 @@
   </div></div></body>
 
 
-<<?php  
+<?php  
 
   $dbc = mysqli_connect('localhost','root','root','letkino');
     if (isset($_POST['submit'])) {
